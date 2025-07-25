@@ -82,10 +82,11 @@ function gameOver() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     ctx.fillStyle = 'white';
-    ctx.font = '30px Arial';
+    ctx.font = '48px Arial';
     ctx.textAlign = 'center';
-    ctx.fillText('Game Over!', canvas.width / 2, canvas.height / 2);
-    ctx.fillText(`Score: ${score}`, canvas.width / 2, canvas.height / 2 + 40);
+    ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2);
+    ctx.font = '24px Arial';
+    ctx.fillText(`Score: ${score}`, canvas.width / 2, canvas.height / 2 + 60);
 }
 
 function restartGame() {
