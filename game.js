@@ -55,11 +55,19 @@ function drawGame() {
 function moveSnake() {
     if (!gameRunning || gamePaused) return;
     
-    const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+    let head = {x: snake[0].x + dx, y: snake[0].y + dy};
     
-    if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-        gameOver();
-        return;
+    // Wrap around walls
+    if (head.x < 0) {
+        head.x = tileCount - 1;
+    } else if (head.x >= tileCount) {
+        head.x = 0;
+    }
+    
+    if (head.y < 0) {
+        head.y = tileCount - 1;
+    } else if (head.y >= tileCount) {
+        head.y = 0;
     }
     
     if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
