@@ -31,8 +31,14 @@ function drawGame() {
     ctx.fillStyle = '#111';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    ctx.fillStyle = '#4CAF50';
-    snake.forEach(segment => {
+    snake.forEach((segment, index) => {
+        if (index === 0) {
+            // Head - darker green
+            ctx.fillStyle = '#2E7D32';
+        } else {
+            // Body - regular green
+            ctx.fillStyle = '#4CAF50';
+        }
         ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
     });
     
