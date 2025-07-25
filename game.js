@@ -27,6 +27,10 @@ function drawGame() {
     ctx.fillStyle = '#111';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
+    if (!gameRunning) {
+        return;
+    }
+    
     ctx.fillStyle = '#4CAF50';
     snake.forEach(segment => {
         ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
