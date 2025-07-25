@@ -24,12 +24,12 @@ function randomFood() {
 }
 
 function drawGame() {
-    ctx.fillStyle = '#111';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
     if (!gameRunning) {
         return;
     }
+    
+    ctx.fillStyle = '#111';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     ctx.fillStyle = '#4CAF50';
     snake.forEach(segment => {
